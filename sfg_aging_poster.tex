@@ -18,12 +18,12 @@
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
-\documentclass[a0,portrait]{a0poster}
+\documentclass[a0,landscape]{a0poster}
 
 \usepackage{multicol} % This is so we can have multiple columns of text side-by-side
 \usepackage{csquotes} 
-\columnsep=100pt % This is the amount of white space between the columns in the poster
-\columnseprule=3pt % This is the thickness of the black line between the columns in the poster
+\columnsep=60pt % This is the amount of white space between the columns in the poster
+\columnseprule=0pt % This is the thickness of the black line between the columns in the poster
 
 \usepackage[svgnames]{xcolor} % Specify colors by their 'svgnames', for a full list of all colors available see here: http://www.latextemplates.com/svgnames-colors
 
@@ -42,6 +42,7 @@
 \usepackage[style=apa, backend=biber]{biblatex}
 \addbibresource{/home/peter/home/Projects/Science/bibliography.bib}
 \usepackage[compact]{titlesec}
+\usepackage[export]{adjustbox}
 \titlespacing{\section}{0pt}{50pt}{20pt} 
 
 \begin{document}
@@ -55,7 +56,7 @@
 % The second is 25% wide and houses a logo for your university/organization or a photo of you
 % The widths of these boxes can be easily edited to accommodate your content as you see fit
 
-\begin{minipage}[b]{0.75\linewidth}
+\begin{minipage}[b]{0.9\linewidth}
 \veryHuge \color{NavyBlue} \textbf{Auditory figure-ground segregation is impaired in aging and age-related hearing loss} \color{Black}\\ % Title
 \huge \textbf{Péter Kristóf Velősy\footnotemark[1], Ádám Boncz\footnotemark[2], István Winkler\footnotemark[2], Brigitta Tóth\footnotemark[2]}\\[0.5cm] % Author(s)
 \Large \textsuperscript{1}Department of Cognitive Science, Budapest University of Technology and Economics\\[0.4cm] %
@@ -64,15 +65,15 @@ Research Centre for Natural Sciences, Budapest\\[0.4cm] % University/organizatio
 \Large \texttt{Contact: peter@petervelosy.com}\\
 \end{minipage}
 %
-\begin{minipage}[b]{0.25\linewidth}
-\includegraphics[width=20cm]{ttk_logo.png}\\
+\begin{minipage}[b]{0.1\linewidth}
+	\includegraphics[height=15cm, right]{ttk_logo_cropped.png}
 \end{minipage}
 
 \vspace{0cm} % A bit of extra whitespace between the header and poster content
 
 %----------------------------------------------------------------------------------------
 
-\begin{multicols}{2} % This is how many columns your poster will be broken into, a portrait poster is generally split into 2 columns
+\begin{multicols}{3} % This is how many columns your poster will be broken into, a portrait poster is generally split into 2 columns
 
 %----------------------------------------------------------------------------------------
 %	INTRODUCTION
@@ -107,6 +108,9 @@ performance dropped to 60\% (\textquote{low-SNR} condition).
 
 \textbf{Task}: Participants listened to a random series of high- and low-SNR SFG stimuli (.5 probability, each), each either containing a figure or not (.5 probability, each). They were instructed to judge whether the figure was present or not. \\
 \textbf{Recorded data}: Behavioral measures (accuracy, reaction time) and EEG
+
+\columnbreak
+
 \section*{Behavioral results}
 
 	 \textbf{Stimulus calibration successfully compensated for individual performance differences.} While we found significantly higher accuracy (d') and lower reaction times in the high- relative to the low-SNR condition, there was no significant group difference. Thus, both the individual adjustments and the SNR manipulation were successful.
@@ -152,23 +156,21 @@ The preliminary data obtained in this study corroborates the hypothesis that the
 
 Functional connectivity analysis will complement our current findings with further data that might prove informative with regards to the exact neural processes involved. Furthermore, a subsequent study will address the question of whether figure-ground segregation training can improve the ability to listen in noisy environments in the elderly.
 
- %----------------------------------------------------------------------------------------
-%	REFERENCES
-%----------------------------------------------------------------------------------------
-\vspace{100pt}
-\subsection*{References}
-\AtNextBibliography{\tiny}
-\printbibliography[heading=none]
-
-%----------------------------------------------------------------------------------------
-%	ACKNOWLEDGEMENTS
-%----------------------------------------------------------------------------------------
-
-\subsection*{Acknowledgements}
-\tiny
-This research project was supported by grant nr. 123790 of the Hungarian Scientific Research Fund (OTKA) and the Bolyai Foundation (PI: Brigitta Tóth).
-
-%----------------------------------------------------------------------------------------
-
 \end{multicols}
+
+\noindent\rule{\textwidth}{3pt}
+
+\columnseprule=0pt
+
+\begin{multicols}{3}
+	\subsection*{References}
+	\vspace{-5pt}
+	\AtNextBibliography{\tiny}
+	\printbibliography[heading=none]
+	
+	\subsection*{Acknowledgements}
+	\tiny
+	This research project was supported by grant nr. 123790 of the Hungarian Scientific Research Fund (OTKA) and the Bolyai Foundation (PI: Brigitta Tóth). This poster has been prepared for presentation at ESCAN 2021 (Budapest, 23-26 June 2021).
+\end{multicols}
+
 \end{document}
